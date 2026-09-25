@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SHOP xmlns="http://www.heureka.cz/ns/offer/1.0">
+  <SHOPITEM>
+    <ITEM_ID>1001</ITEM_ID>
+    <PRODUCTNAME>AKCIA!!! Hydratačný krém 50ml TOP</PRODUCTNAME>
+    <DESCRIPTION>&lt;p&gt;&lt;strong&gt;Super krém&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Hydratuje pleť. Obsahuje kyselinu hyalurónovú a aloe vera. Vhodný na suchú pleť. Objem 50 ml.&lt;/p&gt;</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1001</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1001.jpg</IMGURL>
+    <PRICE_VAT>14.90</PRICE_VAT>
+    <MANUFACTURER>Lumea Naturals</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Kozmetika | Pleťová kozmetika | Pleťové krémy</CATEGORYTEXT>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1002</ITEM_ID>
+    <PRODUCTNAME>Sérum</PRODUCTNAME>
+    <DESCRIPTION>Pleťové sérum s vitamínom C 15 %, 30 ml. Na rozjasnenie pleti a zjednotenie tónu. Používajte ráno pod krém.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1002</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1002.jpg</IMGURL>
+    <PRICE_VAT>21.50</PRICE_VAT>
+    <MANUFACTURER>Lumea Naturals</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Kozmetika | Pleťová kozmetika | Pleťové séra</CATEGORYTEXT>
+    <EAN>8588001234567</EAN>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1003</ITEM_ID>
+    <PRODUCTNAME>ŠAMPÓN NA VLASY BREZA 250ML</PRODUCTNAME>
+    <DESCRIPTION>Kvalitný produkt za skvelú cenu. Doprava zdarma nad 40 €.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1003</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1003.jpg</IMGURL>
+    <PRICE_VAT>7.90</PRICE_VAT>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Kozmetika | Vlasová kozmetika | Šampóny</CATEGORYTEXT>
+    <DELIVERY_DATE>2</DELIVERY_DATE>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1004</ITEM_ID>
+    <PRODUCTNAME>Kondicionér breza 250ml</PRODUCTNAME>
+    <DESCRIPTION>Kvalitný produkt za skvelú cenu. Doprava zdarma nad 40 €.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1004</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1004.jpg</IMGURL>
+    <PRICE_VAT>8.50</PRICE_VAT>
+    <DELIVERY_DATE>2</DELIVERY_DATE>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1005</ITEM_ID>
+    <PRODUCTNAME>Lumea Naturals Telové mlieko s bambuckým maslom 400 ml</PRODUCTNAME>
+    <DESCRIPTION>Telové mlieko Lumea Naturals s bambuckým maslom a mandľovým olejom pre suchú a citlivú pokožku. Rýchlo sa vstrebáva a nezanecháva mastný film. Parfumácia: jemná vanilka. Balenie s pumpičkou 400 ml. Nanášajte po sprchovaní na mierne vlhkú pokožku.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1005</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1005.jpg</IMGURL>
+    <PRICE_VAT>11.90</PRICE_VAT>
+    <MANUFACTURER>Lumea Naturals</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Kozmetika | Telová kozmetika | Telové mlieka</CATEGORYTEXT>
+    <EAN>8588001234599</EAN>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+    <PARAM>
+      <PARAM_NAME>Objem</PARAM_NAME>
+      <VAL>400 ml</VAL>
+    </PARAM>
+    <PARAM>
+      <PARAM_NAME>Typ pokožky</PARAM_NAME>
+      <VAL>suchá, citlivá</VAL>
+    </PARAM>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1006</ITEM_ID>
+    <PRODUCTNAME>Novinka - bambusová kefka</PRODUCTNAME>
+    <DESCRIPTION>Zubná kefka z bambusu, mäkké štetiny, rozložiteľná rúčka. Balenie 4 ks, farby štetín: biela, čierna, zelená, modrá.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1006</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1006.jpg</IMGURL>
+    <PRICE_VAT>6.90</PRICE_VAT>
+    <MANUFACTURER>EcoBrush</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Ústna hygiena | Zubné kefky</CATEGORYTEXT>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1007</ITEM_ID>
+    <PRODUCTNAME>Vonná sviečka</PRODUCTNAME>
+    <DESCRIPTION></DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1007</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1007.jpg</IMGURL>
+    <PRICE_VAT>12.00</PRICE_VAT>
+    <MANUFACTURER>Hygge Home</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Dom a záhrada | Bytové doplnky | Sviečky</CATEGORYTEXT>
+    <DELIVERY_DATE>5</DELIVERY_DATE>
+    <PARAM>
+      <PARAM_NAME>Vôňa</PARAM_NAME>
+      <VAL>levanduľa</VAL>
+    </PARAM>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1008</ITEM_ID>
+    <PRODUCTNAME>Hygge Home Vonná sójová sviečka Céderové drevo 220 g</PRODUCTNAME>
+    <DESCRIPTION>Ručne liata sviečka zo sójového vosku s bavlneným knôtom. Vôňa céderového dreva a bergamotu. Doba horenia približne 45 hodín. Sklenená dóza s dreveným viečkom, hmotnosť 220 g.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1008</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1008.jpg</IMGURL>
+    <PRICE_VAT>16.90</PRICE_VAT>
+    <MANUFACTURER>Hygge Home</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Dom a záhrada | Bytové doplnky | Sviečky</CATEGORYTEXT>
+    <EAN>8588009876543</EAN>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+    <PARAM>
+      <PARAM_NAME>Hmotnosť</PARAM_NAME>
+      <VAL>220 g</VAL>
+    </PARAM>
+    <PARAM>
+      <PARAM_NAME>Doba horenia</PARAM_NAME>
+      <VAL>45 h</VAL>
+    </PARAM>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1009</ITEM_ID>
+    <PRODUCTNAME>Balzam na pery</PRODUCTNAME>
+    <DESCRIPTION>Balzam.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1009</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1009.jpg</IMGURL>
+    <PRICE_VAT>3.90</PRICE_VAT>
+    <MANUFACTURER>Lumea Naturals</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Kozmetika | Starostlivosť o pery</CATEGORYTEXT>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1010</ITEM_ID>
+    <PRODUCTNAME>Micelárna voda 400 ml - výpredaj</PRODUCTNAME>
+    <DESCRIPTION>Jemná micelárna voda na odlíčenie tváre, očí aj pier. Bez parfumácie a alkoholu, vhodná pre citlivú pleť. Neoplachuje sa. 400 ml.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1010</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1010.jpg</IMGURL>
+    <PRICE_VAT>6.50</PRICE_VAT>
+    <MANUFACTURER>Lumea Naturals</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Kozmetika | Pleťová kozmetika | Odličovače</CATEGORYTEXT>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1011</ITEM_ID>
+    <PRODUCTNAME>Dezodorant</PRODUCTNAME>
+    <DESCRIPTION>Prírodný dezodorant bez hliníka, vôňa citrón a mäta, 50 ml roll-on. Účinok 24 hodín.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1011</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1011.jpg</IMGURL>
+    <PRICE_VAT>8.90</PRICE_VAT>
+    <MANUFACTURER>EcoBrush</MANUFACTURER>
+  </SHOPITEM>
+  <SHOPITEM>
+    <ITEM_ID>1012</ITEM_ID>
+    <PRODUCTNAME>Lumea Naturals Čistiaci gél na tvár s čajovníkom 150 ml</PRODUCTNAME>
+    <DESCRIPTION>Čistiaci gél s čajovníkovým olejom a zinkom pre mastnú a zmiešanú pleť so sklonom k nedokonalostiam. Jemne odstraňuje nečistoty a nadbytočný maz, nevysušuje. Používajte ráno a večer.</DESCRIPTION>
+    <URL>https://demo-kozmetika.example/produkt/1012</URL>
+    <IMGURL>https://demo-kozmetika.example/img/1012.jpg</IMGURL>
+    <PRICE_VAT>9.90</PRICE_VAT>
+    <MANUFACTURER>Lumea Naturals</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.sk | Kozmetika a zdravie | Kozmetika | Pleťová kozmetika | Čistenie pleti</CATEGORYTEXT>
+    <EAN>8588001234612</EAN>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+    <PARAM>
+      <PARAM_NAME>Objem</PARAM_NAME>
+      <VAL>150 ml</VAL>
+    </PARAM>
+    <PARAM>
+      <PARAM_NAME>Typ pleti</PARAM_NAME>
+      <VAL>mastná, zmiešaná</VAL>
+    </PARAM>
+  </SHOPITEM>
+</SHOP>

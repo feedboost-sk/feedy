@@ -1,0 +1,62 @@
+{
+ "1003:sk": {
+  "nazov": "Šampón na vlasy s brezou 250 ml",
+  "popis": "Šampón na vlasy s brezou v balení 250 ml.\nNa bežné umývanie vlasov.",
+  "parametre": {"Objem": "250 ml"},
+  "zmeny": [
+   "Názov prepísaný z VEĽKÝCH PÍSMEN do čitateľného tvaru, ktorý Heureka akceptuje.",
+   "Z popisu odstránená informácia o doprave. Tá do popisu produktu nepatrí a porovnávače ju zakazujú.",
+   "Vo feede chýba výrobca, zloženie a typ vlasov. Po ich doplnení vieme napísať plnohodnotný predajný popis."
+  ]
+ },
+ "1004:sk": {
+  "nazov": "Kondicionér na vlasy s brezou 250 ml",
+  "popis": "Kondicionér na vlasy s brezou v balení 250 ml.\nPoužíva sa po umytí vlasov šampónom.",
+  "parametre": {"Objem": "250 ml"},
+  "zmeny": [
+   "Upresnený názov, aby bolo jasné, že ide o vlasovú kozmetiku.",
+   "Odstránený popis, ktorý bol zhodný so šampónom (duplicitný text).",
+   "Chýba výrobca, kategória a EAN. Bez kategórie sa produkt na Heureke nemusí zobraziť v správnej sekcii."
+  ]
+ },
+ "1011:sk": {
+  "nazov": "EcoBrush Prírodný dezodorant roll-on bez hliníka Citrón a mäta 50 ml",
+  "popis": "Prírodný dezodorant EcoBrush v praktickom roll-on balení pre každodenné použitie.\nNeobsahuje hliník a jeho účinok vydrží 24 hodín.\nOsviežujúca vôňa citróna a mäty. Objem 50 ml.",
+  "parametre": {"Objem": "50 ml", "Typ": "roll-on", "Vôňa": "citrón, mäta", "Bez hliníka": "áno", "Účinok": "24 h"},
+  "zmeny": [
+   "Z jednoslovného názvu „Dezodorant“ je názov, ktorý zákazník vyhľadá (značka + typ + vôňa + objem).",
+   "Parametre vytiahnuté z popisu a vďaka nim sa produkt zobrazí vo filtroch.",
+   "Chýba kategória a dostupnosť. Treba ich doplniť."
+  ]
+ },
+ "1007:sk": {
+  "nazov": "Hygge Home Vonná sviečka Levanduľa",
+  "popis": "Vonná sviečka Hygge Home s vôňou levandule.\nDoplnok do bytu pre príjemnú atmosféru.",
+  "parametre": {"Vôňa": "levanduľa"},
+  "zmeny": [
+   "Do názvu pridaná značka a vôňa. Podľa nich zákazníci na porovnávačoch hľadajú.",
+   "Doplnený základný popis, pretože produkt nemal žiadny.",
+   "Pre plný popis doplňte hmotnosť, materiál vosku a dobu horenia (ako pri sviečke Céderové drevo)."
+  ]
+ },
+ "1001:sk": {
+  "nazov": "Lumea Naturals Hydratačný pleťový krém s kyselinou hyalurónovou a aloe vera 50 ml",
+  "popis": "Hydratačný pleťový krém Lumea Naturals je určený pre suchú pleť.\nObsahuje kyselinu hyalurónovú a aloe vera, ktoré pleti dodávajú hydratáciu.\nBalenie s objemom 50 ml.",
+  "parametre": {"Objem": "50 ml", "Typ pleti": "suchá", "Účinné látky": "kyselina hyalurónová, aloe vera"},
+  "zmeny": [
+   "Z názvu odstránené „AKCIA!!!“ a „TOP“. Heureka aj Google takéto produkty zamietajú alebo penalizujú.",
+   "Do názvu pridaná značka a hlavné účinné látky. Zákazníci podľa nich hľadajú.",
+   "Popis vyčistený od HTML a doplnené 3 parametre pre filtre."
+  ]
+ },
+ "1006:sk": {
+  "nazov": "EcoBrush Bambusová zubná kefka mäkká 4 ks",
+  "popis": "Bambusové zubné kefky EcoBrush s mäkkými štetinami v balení po 4 kusy.\nRúčka z bambusu je rozložiteľná.\nKaždá kefka má inú farbu štetín (biela, čierna, zelená, modrá), takže si ich v rodine nepomýlite.",
+  "parametre": {"Materiál rúčky": "bambus", "Tvrdosť štetín": "mäkké", "Počet kusov": "4", "Farby štetín": "biela, čierna, zelená, modrá"},
+  "zmeny": [
+   "Z názvu odstránené „Novinka“. Porovnávače nepovoľujú reklamné slová.",
+   "Do názvu pridaná značka, tvrdosť a počet kusov v balení.",
+   "Doplnené 4 parametre a chýba EAN."
+  ]
+ }
+}

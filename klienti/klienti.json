@@ -1,0 +1,19 @@
+{
+  "klienti": [
+    {
+      "kod": "demo",
+      "aktivny": true,
+      "feed": "sample/sample_heureka.xml",
+      "vylepsenia": ["demo-vylepsenia.json"],
+      "opravit_duplicitne_id": true
+    },
+    {
+      "kod": "dom-nabytku",
+      "aktivny": false,
+      "feed": "https://domnabytku.sk/xml/heureka.xml",
+      "vylepsenia": ["dom-nabytku-vylepsenia.json"],
+      "kategorie": "dom-nabytku-kategorie.json",
+      "opravit_duplicitne_id": true
+    }
+  ]
+}
