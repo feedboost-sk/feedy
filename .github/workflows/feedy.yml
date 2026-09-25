@@ -1,0 +1,42 @@
+name: Opravené feedy klientov
+
+on:
+  schedule:
+    - cron: "15 3 * * *"   # každý deň o 5:15 (letný čas) / 4:15 (zimný čas)
+  workflow_dispatch: {}      # ručné spustenie cez tlačidlo "Run workflow"
+  push:
+    paths: ["klienti/**"]    # po zmene vylepšení sa feed hneď pregeneruje
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m feedboost.publish
+        env:
+          FEEDY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
