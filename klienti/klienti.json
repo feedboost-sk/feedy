@@ -4,16 +4,30 @@
       "kod": "demo",
       "aktivny": true,
       "feed": "sample/sample_heureka.xml",
-      "vylepsenia": ["demo-vylepsenia.json"],
+      "vylepsenia": [
+        "demo-vylepsenia.json"
+      ],
       "opravit_duplicitne_id": true
     },
     {
       "kod": "dom-nabytku",
       "aktivny": false,
       "feed": "https://domnabytku.sk/xml/heureka.xml",
-      "vylepsenia": ["dom-nabytku-vylepsenia.json"],
+      "vylepsenia": [
+        "dom-nabytku-vylepsenia.json"
+      ],
       "kategorie": "dom-nabytku-kategorie.json",
       "opravit_duplicitne_id": true
+    },
+    {
+      "kod": "rolmajster",
+      "aktivny": false,
+      "feed": "https://rolmajster.sk/heureka.xml",
+      "pravidla": "rolmajster",
+      "vylepsenia": [],
+      "vynechat_zmeny": [],
+      "opravit_duplicitne_id": false,
+      "len_produkty": "rolmajster-skusobna-200.json"
     }
   ]
 }

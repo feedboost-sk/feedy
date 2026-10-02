@@ -131,6 +131,9 @@ def build(feed_bytes: bytes, improved: dict[str, dict], catmap: dict[str, str],
                 changes.append("EAN")
             if imp.get("kategoria"):
                 new_cat = imp["kategoria"]
+            if imp.get("itemgroup") and not text_of(item, "ITEMGROUP_ID"):
+                _set_child(item, ns, "ITEMGROUP_ID", imp["itemgroup"], after=("ITEM_ID",))
+                changes.append("varianty zoskupené")
             params = imp.get("parametre") or {}
             if params:
                 existing = {text_of(p, "PARAM_NAME").lower() for p in item if _local(p.tag) == "PARAM"}

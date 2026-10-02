@@ -5,6 +5,7 @@ Spúšťa ho GitHub Actions každý deň (pozri .github/workflows/feedy.yml), al
 """
 from __future__ import annotations
 
+import importlib
 import json
 import os
 import sys
@@ -13,7 +14,7 @@ from pathlib import Path
 import requests
 
 from .build_feed import build, load_improved
-from .feed import load_bytes
+from .feed import load_bytes, parse_feed
 
 
 def main() -> int:
@@ -31,9 +32,20 @@ def main() -> int:
             continue
         name = c["kod"]
         try:
-            improved = load_improved([f"klienti/{f}" for f in c.get("vylepsenia", [])])
+            raw = load_bytes(c["feed"])
+            improved = {}
+            if c.get("pravidla"):  # úpravy počítané z aktuálneho feedu (aj pre nové produkty)
+                mod = importlib.import_module(f"feedboost.pravidla.{c['pravidla']}")
+                improved.update(mod.improve_all(parse_feed(raw)[1]))
+            for k, v in load_improved([f"klienti/{f}" for f in c.get("vylepsenia", [])]).items():
+                improved[k] = {**improved.get(k, {}), **v}  # ručné úpravy majú prednosť
+            if c.get("len_produkty"):  # skúšobná doba: upravujeme len vybraných 200 produktov
+                allowed = set(json.loads(Path(f"klienti/{c['len_produkty']}").read_text("utf-8")))
+                improved = {k: v for k, v in improved.items() if k.split("~")[0] in allowed}
+            for k in c.get("vynechat_zmeny", []):  # produkty, ktoré klient neschválil
+                improved.pop(k, None)
             catmap = json.loads(Path(f"klienti/{c['kategorie']}").read_text("utf-8")) if c.get("kategorie") else {}
-            data, log = build(load_bytes(c["feed"]), improved, catmap, c.get("opravit_duplicitne_id", False))
+            data, log = build(raw, improved, catmap, c.get("opravit_duplicitne_id", False))
             (public / f"{name}.xml").write_bytes(data)
             print(f"✓ {name}: {len(log)} upravených produktov")
             links.append(f'<li><a href="{name}.xml">{name}.xml</a></li>')
