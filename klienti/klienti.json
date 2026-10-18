@@ -28,6 +28,36 @@
       "vynechat_zmeny": [],
       "opravit_duplicitne_id": false,
       "len_produkty": "rolmajster-skusobna-200.json"
+    },
+    {
+      "kod": "dekoracie",
+      "aktivny": false,
+      "feed": "https://dekoraciedobytu.sk/heureka.xml",
+      "pravidla": "dekoracie",
+      "vylepsenia": [],
+      "vynechat_zmeny": [],
+      "opravit_duplicitne_id": false,
+      "len_produkty": "dekoracie-skusobna-200.json"
+    },
+    {
+      "kod": "svietidla",
+      "aktivny": false,
+      "feed": "https://svietidla.com/heureka.xml",
+      "pravidla": "svietidla",
+      "vylepsenia": [],
+      "vynechat_zmeny": [],
+      "opravit_duplicitne_id": false,
+      "len_produkty": "svietidla-skusobna-200.json"
+    },
+    {
+      "kod": "cime",
+      "aktivny": true,
+      "feed": "https://cime-shop.cz/heureka/export/products.xml",
+      "vylepsenia": [
+        "cime-vylepsenia.json"
+      ],
+      "kategorie": "cime-kategorie.json",
+      "opravit_duplicitne_id": false
     }
   ]
 }
