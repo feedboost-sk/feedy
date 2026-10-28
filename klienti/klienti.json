@@ -58,6 +58,16 @@
       ],
       "kategorie": "cime-kategorie.json",
       "opravit_duplicitne_id": false
+    },
+    {
+      "kod": "chrusticek",
+      "aktivny": true,
+      "feed": "https://chrusticek.sk/heureka/export/products.xml",
+      "vylepsenia": [
+        "chrusticek-vylepsenia.json"
+      ],
+      "kategorie": "chrusticek-kategorie.json",
+      "opravit_duplicitne_id": false
     }
   ]
 }
