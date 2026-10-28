@@ -68,6 +68,16 @@
       ],
       "kategorie": "chrusticek-kategorie.json",
       "opravit_duplicitne_id": false
+    },
+    {
+      "kod": "chrusticek-cz",
+      "aktivny": true,
+      "feed": "https://chrusticek.cz/heureka/export/products.xml",
+      "vylepsenia": [
+        "chrusticek-cz-vylepsenia.json"
+      ],
+      "kategorie": "chrusticek-cz-kategorie.json",
+      "opravit_duplicitne_id": false
     }
   ]
 }
