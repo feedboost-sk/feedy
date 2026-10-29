@@ -67,7 +67,11 @@
         "chrusticek-vylepsenia.json"
       ],
       "kategorie": "chrusticek-kategorie.json",
-      "opravit_duplicitne_id": false
+      "opravit_duplicitne_id": false,
+      "google": {
+        "mena": "EUR",
+        "krajina": "SK"
+      }
     },
     {
       "kod": "chrusticek-cz",
@@ -77,7 +81,11 @@
         "chrusticek-cz-vylepsenia.json"
       ],
       "kategorie": "chrusticek-cz-kategorie.json",
-      "opravit_duplicitne_id": false
+      "opravit_duplicitne_id": false,
+      "google": {
+        "mena": "CZK",
+        "krajina": "CZ"
+      }
     }
   ]
 }
