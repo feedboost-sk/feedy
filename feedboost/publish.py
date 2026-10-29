@@ -14,6 +14,7 @@ from pathlib import Path
 import requests
 
 from .build_feed import build, load_improved
+from .google_feed import build_google
 from .feed import load_bytes, parse_feed
 
 
@@ -49,6 +50,17 @@ def main() -> int:
             (public / f"{name}.xml").write_bytes(data)
             print(f"✓ {name}: {len(log)} upravených produktov")
             links.append(f'<li><a href="{name}.xml">{name}.xml</a></li>')
+            if c.get("google"):  # aj feed pre Google Merchant Center z opraveného feedu
+                try:
+                    gc = c["google"]
+                    ov = json.loads(Path(f"klienti/{gc['kategorie']}").read_text("utf-8")) if gc.get("kategorie") else None
+                    gdata, gst = build_google(data, gc.get("mena", "EUR"), gc.get("krajina", "SK"), ov)
+                    (public / f"{name}-google.xml").write_bytes(gdata)
+                    print(f"✓ {name}-google: {gst}")
+                    links.append(f'<li><a href="{name}-google.xml">{name}-google.xml</a></li>')
+                except Exception as ge:  # noqa: BLE001 – Google feed nesmie zhodiť Heureka feed
+                    ok = False
+                    print(f"::warning::{name}-google: nepodarilo sa ({ge})")
         except Exception as e:  # noqa: BLE001  – jeden klient nesmie zhodiť ostatných
             ok = False
             print(f"::warning::{name}: nový feed sa nepodarilo vyrobiť ({e}) – ponechávam včerajší")
