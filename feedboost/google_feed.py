@@ -23,6 +23,17 @@ G = "http://base.google.com/ns/1.0"
 # Heureka kategória -> Google product category ID. Pravidlá sa skúšajú postupne na poslednej
 # časti cesty (bez diakritiky, malými písmenami); platí prvé, ktoré sedí. SK aj CZ názvy.
 RULES: list[tuple[str, int | None]] = [
+    # oblečenie, obuv a drobnosti (SK aj CZ) – špecifické pravidlá najprv
+    (r"jedalensk\w* supravy|jidelni soupravy", 4026), (r"darcekove poukazy|darkove poukazy", 53),
+    (r"opalovac", 2740), (r"praci (prostred|gel)|pracie (prostried|gel)|mydla na pranie", 2754),
+    (r"\bbody\b", 5411), (r"(damske|panske) ponozk", 209), (r"overal|kombinez", 5250), (r"pancuch", 215),
+    (r"spodna bielizen|spodni pradlo", 1772), (r"plavk", 211), (r"supravy|soupravy", 7313),
+    (r"tricka|tricko|\btielk|\btilk|mikin|svetr|kosile|kosele|bluzk|halenk", 212),
+    (r"bundy|bunda|kabat|\bvesty", 5598), (r"legin|nohavic|kalhot|teplak", 204), (r"sortky|kratasy", 207),
+    (r"\bsaty\b|sukne|sukne", 2271),
+    (r"capack|cizm|topank|tenisk|snehul|sandal|papuc|backor|\bboty\b|obuv|polobotk|zabky", 187),
+    (r"kukl", 1786), (r"nakrcnik", 7230), (r"ciapk|cepic|klobuk", 173), (r"rukavic", 170),
+    (r"slnecne okuliare|slunecni bryle", 178),
     (r"elektrick\w* (vozidl|vozitk)", 2753), (r"odraz", 3441), (r"trojkol|trikol|slapac|slapaci", 2724),
     (r"kostym", 5193), (r"kociky pre babik|kocarky pro panenk", 3584), (r"^kociky$|^kocarky$", 568),
     (r"korby|tasky na koc|podlozky do koc|prislusenstvo ku koc|prislusenstvi ke koc|slnecnik|slunecnik|plastenky na koc", 4387),
