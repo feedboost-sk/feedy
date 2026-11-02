@@ -86,6 +86,20 @@
         "mena": "CZK",
         "krajina": "CZ"
       }
+    },
+    {
+      "kod": "bergam",
+      "aktivny": true,
+      "feed": "https://bergam.sk/heureka/export/products.xml",
+      "vylepsenia": [
+        "bergam-vylepsenia.json"
+      ],
+      "kategorie": "bergam-kategorie.json",
+      "opravit_duplicitne_id": false,
+      "google": {
+        "mena": "EUR",
+        "krajina": "SK"
+      }
     }
   ]
 }
