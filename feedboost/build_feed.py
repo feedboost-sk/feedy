@@ -76,8 +76,28 @@ def _cdata_desc(item, ns: str, text: str) -> None:
     _cdata_desc(item, ns, text)
 
 
+def _gtin_ok(ean: str) -> bool:
+    """Platný EAN/GTIN (8, 12, 13 alebo 14 číslic so správnou kontrolnou číslicou)."""
+    if not re.fullmatch(r"\d{8}|\d{12,14}", ean):
+        return False
+    digits = [int(d) for d in ean]
+    check = digits.pop()
+    total = sum(d * (3 if i % 2 == 0 else 1) for i, d in enumerate(reversed(digits)))
+    return (10 - total % 10) % 10 == check
+
+
+def _price_of(txt: str) -> float | None:
+    try:
+        return float(txt.replace(" ", "").replace("\xa0", "").replace(",", "."))
+    except ValueError:
+        return None
+
+
 def build(feed_bytes: bytes, improved: dict[str, dict], catmap: dict[str, str],
-          fix_dup_ids: bool = False) -> tuple[bytes, list[dict]]:
+          fix_dup_ids: bool = False, max_cena: float | None = None,
+          opravit_ean: bool = False) -> tuple[bytes, list[dict]]:
+    """max_cena: položky s PRICE_VAT nad touto hodnotou (zástupné ceny typu „cena na dotaz“) sa z feedu vynechajú.
+    opravit_ean: neplatné EAN (zlý formát alebo kontrolná číslica) sa z feedu odstránia."""
     parser = etree.XMLParser(recover=True, huge_tree=True, strip_cdata=False, resolve_entities=False)
     root = etree.fromstring(feed_bytes, parser)
     items = [el for el in root.iter() if _local(el.tag) == "SHOPITEM"]
@@ -96,6 +116,14 @@ def build(feed_bytes: bytes, improved: dict[str, dict], catmap: dict[str, str],
     seen: Counter = Counter()
     for item in items:
         item_id = text_of(item, "ITEM_ID")
+        if max_cena is not None:
+            pv = _price_of(text_of(item, "PRICE_VAT"))
+            if pv is not None and pv > max_cena:
+                item.getparent().remove(item)
+                log.append({"ITEM_ID": item_id, "vyskyt": 1, "zmeny": "vynechaný (zástupná cena)",
+                            "nazov_povodny": text_of(item, "PRODUCTNAME"), "nazov_novy": "", "popis_novy": "",
+                            "parametre_nove": "", "kategoria_povodna": "", "kategoria_nova": ""})
+                continue
         seen[item_id] += 1
         occurrence = seen[item_id]
         changes = []
@@ -106,6 +134,13 @@ def build(feed_bytes: bytes, improved: dict[str, dict], catmap: dict[str, str],
             new_id = f"{item_id}-{occurrence}"
             _set_child(item, ns, "ITEM_ID", new_id)
             changes.append(f"ITEM_ID {item_id} → {new_id} (duplicita)")
+
+        # 1b) neplatný EAN preč (Heureka podľa neho páruje chybne)
+        if opravit_ean:
+            for c in list(item):
+                if _local(c.tag) == "EAN" and not _gtin_ok("".join(c.itertext()).strip()):
+                    item.remove(c)
+                    changes.append("neplatný EAN odstránený")
 
         # 2) kategória podľa mapy (pre všetky produkty)
         old_cat = text_of(item, "CATEGORYTEXT")

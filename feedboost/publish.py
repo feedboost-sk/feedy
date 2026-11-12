@@ -15,6 +15,7 @@ import requests
 
 from .build_feed import build, load_improved
 from .google_feed import build_google
+from .zbozi_feed import build_zbozi
 from .feed import load_bytes, parse_feed
 
 
@@ -46,7 +47,8 @@ def main() -> int:
             for k in c.get("vynechat_zmeny", []):  # produkty, ktoré klient neschválil
                 improved.pop(k, None)
             catmap = json.loads(Path(f"klienti/{c['kategorie']}").read_text("utf-8")) if c.get("kategorie") else {}
-            data, log = build(raw, improved, catmap, c.get("opravit_duplicitne_id", False))
+            data, log = build(raw, improved, catmap, c.get("opravit_duplicitne_id", False),
+                              max_cena=c.get("max_cena"), opravit_ean=c.get("opravit_ean", False))
             (public / f"{name}.xml").write_bytes(data)
             print(f"✓ {name}: {len(log)} upravených produktov")
             links.append(f'<li><a href="{name}.xml">{name}.xml</a></li>')
@@ -61,6 +63,17 @@ def main() -> int:
                 except Exception as ge:  # noqa: BLE001 – Google feed nesmie zhodiť Heureka feed
                     ok = False
                     print(f"::warning::{name}-google: nepodarilo sa ({ge})")
+            if c.get("zbozi"):  # aj feed pre Zboží.cz z opraveného feedu
+                try:
+                    zc = c["zbozi"]
+                    zm = json.loads(Path(f"klienti/{zc['kategorie']}").read_text("utf-8")) if zc.get("kategorie") else {}
+                    zdata, zst = build_zbozi(data, zm)
+                    (public / f"{name}-zbozi.xml").write_bytes(zdata)
+                    print(f"✓ {name}-zbozi: {zst}")
+                    links.append(f'<li><a href="{name}-zbozi.xml">{name}-zbozi.xml</a></li>')
+                except Exception as ze:  # noqa: BLE001 – Zboží feed nesmie zhodiť Heureka feed
+                    ok = False
+                    print(f"::warning::{name}-zbozi: nepodarilo sa ({ze})")
         except Exception as e:  # noqa: BLE001  – jeden klient nesmie zhodiť ostatných
             ok = False
             print(f"::warning::{name}: nový feed sa nepodarilo vyrobiť ({e}) – ponechávam včerajší")
