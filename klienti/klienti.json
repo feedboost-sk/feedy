@@ -57,7 +57,17 @@
         "cime-vylepsenia.json"
       ],
       "kategorie": "cime-kategorie.json",
-      "opravit_duplicitne_id": false
+      "opravit_duplicitne_id": false,
+      "max_cena": 5000000,
+      "opravit_ean": true,
+      "google": {
+        "mena": "CZK",
+        "krajina": "CZ",
+        "kategorie": "cime-google.json"
+      },
+      "zbozi": {
+        "kategorie": "cime-zbozi.json"
+      }
     },
     {
       "kod": "chrusticek",
