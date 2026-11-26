@@ -19,6 +19,35 @@ from .zbozi_feed import build_zbozi
 from .feed import load_bytes, parse_feed
 
 
+HLAVICKY = [
+    {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                   "Chrome/131.0.0.0 Safari/537.36",
+     "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8", "Accept-Language": "cs-CZ,cs;q=0.9,sk;q=0.8,en;q=0.7"},
+    {"User-Agent": "Heureka-Feed-Validator/1.0 (+FeedBoost)", "Accept": "*/*"},
+]
+
+
+def stiahni(src: str) -> bytes:
+    """Stiahne feed klienta. E-shopy (napr. Shoptet) blokujú predvolený python-requests User-Agent (403),
+    preto skúšame hlavičky prehliadača a pri chybe to zopakujeme."""
+    if not src.startswith(("http://", "https://")):
+        return load_bytes(src)
+    import time
+    posledna = None
+    for pokus in range(3):
+        for h in HLAVICKY:
+            try:
+                r = requests.get(src, headers=h, timeout=180)
+                r.raise_for_status()
+                if b"<" not in r.content[:200]:
+                    raise ValueError("odpoveď nie je XML")
+                return r.content
+            except Exception as e:  # noqa: BLE001
+                posledna = e
+        time.sleep(10 * (pokus + 1))
+    raise posledna
+
+
 def main() -> int:
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -34,7 +63,7 @@ def main() -> int:
             continue
         name = c["kod"]
         try:
-            raw = load_bytes(c["feed"])
+            raw = stiahni(c["feed"])
             improved = {}
             if c.get("pravidla"):  # úpravy počítané z aktuálneho feedu (aj pre nové produkty)
                 mod = importlib.import_module(f"feedboost.pravidla.{c['pravidla']}")
