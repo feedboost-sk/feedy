@@ -1,4 +1,5 @@
 {
+  "poznamka": "2026-11-26: stahovanie feedov s hlavickami prehliadaca (oprava 403)",
   "klienti": [
     {
       "kod": "demo",
